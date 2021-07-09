@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutterfirstapp/drawer.dart';
+import 'package:flutterfirstapp/utils/constants.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'login_page.dart';
 
 class HomePage extends StatefulWidget {
   static const String routeName = "/home";
@@ -40,7 +42,9 @@ class _HomePageState extends State<HomePage> {
         title: Text("First App"),
         actions: [
           IconButton(
-            onPressed:() {Navigator.pop(context);
+            onPressed:() {
+              Constants.prefs?.setBool("loggedIn", false);
+              Navigator.pushReplacementNamed(context, LoginPage.routeName);
             }, 
             icon: Icon(Icons.logout)
             )
