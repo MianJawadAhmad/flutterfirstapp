@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterfirstapp/pages/home_page_with_fb.dart';
 import 'package:flutterfirstapp/pages/login_page.dart';
 import 'package:flutterfirstapp/utils/constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-    home: Constants.prefs?.getBool("loggedIn") == true?HomePage():LoginPage(),
+    home: Constants.prefs?.getBool("loggedIn") == true?HomePageFB():LoginPage(),
     theme: ThemeData(
       primarySwatch: Colors.purple,
     ),
